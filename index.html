@@ -1,0 +1,1059 @@
+DOCTYPEhtml>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>fer's pink website ★</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Pacifico&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    padding:20px 12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at 10px 10px, rgba(255,255,255,.9) 1px, transparent 2px) 0 0/20px 20px,
+        linear-gradient(135deg,#ffb4d8,#ffd9ea 50%,#f58fc1);
+
+    color:#3c2635;
+    font-family:"Comic Neue",cursive;
+    overflow-x:hidden;
+}
+
+
+/* BRILLITOS */
+
+.sparkle{
+    position:fixed;
+    color:white;
+    text-shadow:1px 1px #d25b9b;
+    font-size:23px;
+    z-index:0;
+    animation:float 3s ease-in-out infinite;
+}
+
+.s1{
+    top:8%;
+    left:8%;
+}
+
+.s2{
+    top:20%;
+    right:9%;
+    font-size:15px;
+    animation-delay:.7s;
+}
+
+.s3{
+    bottom:12%;
+    left:9%;
+    font-size:17px;
+    animation-delay:1.2s;
+}
+
+.s4{
+    bottom:18%;
+    right:8%;
+    font-size:25px;
+    animation-delay:1.8s;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-7px) rotate(8deg);
+    }
+}
+
+
+/* CONTENEDOR */
+
+.page-wrap{
+    width:100%;
+    max-width:475px;
+    position:relative;
+    z-index:2;
+}
+
+
+/* VENTANA */
+
+.window{
+    background:#fff;
+    border:3px solid #393039;
+
+    box-shadow:
+        7px 7px 0 #c85b96,
+        12px 12px 0 rgba(70,30,55,.18);
+}
+
+
+/* BARRA DE WINDOWS */
+
+.titlebar{
+    height:37px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 8px;
+
+    background:
+        linear-gradient(
+            #fff,
+            #ffd9eb 45%,
+            #f17bb2 50%,
+            #ffb6d7
+        );
+
+    border-bottom:2px solid #393039;
+
+    font-size:12px;
+    font-weight:bold;
+}
+
+.titlebar .buttons{
+    display:flex;
+    gap:3px;
+}
+
+.win{
+    width:18px;
+    height:18px;
+
+    display:grid;
+    place-items:center;
+
+    background:#fff;
+    border:2px outset #ddd;
+
+    font-size:10px;
+    line-height:1;
+}
+
+
+/* PANTALLA */
+
+.screen{
+    position:relative;
+
+    margin:7px;
+    padding:25px 18px 22px;
+
+    min-height:570px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.75),
+            rgba(255,255,255,.75)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 5px,
+            rgba(255,105,170,.06) 6px
+        );
+
+    border:2px solid #f09bc2;
+
+    overflow:hidden;
+}
+
+
+/* CABECERA */
+
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.site-name{
+    display:inline-block;
+
+    padding:4px 13px;
+
+    background:#222;
+    color:#fff;
+
+    font-size:10px;
+    letter-spacing:2px;
+
+    transform:rotate(-2deg);
+}
+
+.subtitle{
+    margin-top:9px;
+
+    color:#d84c91;
+
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+
+/* DECORACIÓN */
+
+.deco{
+    color:#e46aa7;
+    font-size:15px;
+    letter-spacing:7px;
+}
+
+
+/* TÍTULOS */
+
+h1{
+    margin:12px 0 5px;
+
+    color:#252027;
+
+    font-family:Pacifico,cursive;
+
+    font-size:46px;
+    line-height:1.05;
+
+    text-shadow:
+        2px 2px 0 white,
+        4px 4px 0 #f49bc4;
+}
+
+.pink{
+    color:#df4d91;
+}
+
+.text{
+    max-width:350px;
+
+    margin:17px auto;
+
+    font-size:15px;
+    line-height:1.55;
+
+    font-weight:bold;
+}
+
+
+/* PÁGINAS */
+
+.page{
+    display:none;
+
+    animation:pop .3s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pop{
+
+    from{
+        opacity:0;
+        transform:translateY(7px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* BOTONES */
+
+.old-button{
+
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:9px 19px;
+
+    border:3px outset #fff;
+
+    background:
+        linear-gradient(
+            #fff,
+            #ffd6e9 45%,
+            #ef76b1 50%,
+            #ffafd3
+        );
+
+    color:#342631;
+
+    font-family:"Comic Neue",cursive;
+    font-size:13px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:3px 3px 0 #393039;
+
+}
+
+.old-button:hover{
+    filter:brightness(1.05);
+}
+
+.old-button:active{
+    border-style:inset;
+    transform:translate(2px,2px);
+    box-shadow:1px 1px 0 #393039;
+}
+
+
+/* MINI ETIQUETA */
+
+.tag{
+    display:inline-block;
+
+    margin-top:12px;
+    padding:4px 10px;
+
+    background:#222;
+    color:#fff;
+
+    font-size:10px;
+    letter-spacing:1px;
+
+    transform:rotate(1deg);
+}
+
+
+/* PREGUNTA */
+
+.question{
+
+    margin:42px 0 8px;
+
+    font-family:Pacifico,cursive;
+
+    font-size:36px;
+
+    line-height:1.15;
+
+    color:#262027;
+
+    text-shadow:
+        2px 2px white,
+        3px 3px #f3a0c8;
+}
+
+.small{
+    font-size:13px;
+    font-weight:bold;
+    color:#8b5170;
+}
+
+
+/* BOTONES SÍ / NO */
+
+.choice-area{
+
+    position:relative;
+
+    height:175px;
+
+    margin-top:10px;
+}
+
+#yes,
+#no{
+
+    position:absolute;
+
+    padding:10px 25px;
+
+    border:3px outset #fff;
+
+    font-family:"Comic Neue",cursive;
+
+    font-size:14px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:3px 3px 0 #393039;
+}
+
+#yes{
+
+    left:17%;
+    top:50px;
+
+    background:#e95599;
+    color:white;
+}
+
+#no{
+
+    left:59%;
+    top:50px;
+
+    background:#fff;
+    color:#3c2635;
+}
+
+#yes:active,
+#no:active{
+    border-style:inset;
+}
+
+
+/* FORMULARIO */
+
+.form-title{
+    margin-top:48px;
+}
+
+label{
+
+    display:block;
+
+    margin:23px 0 7px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    color:#b63e78;
+
+    letter-spacing:1px;
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:3px inset #fff;
+
+    background:#fff;
+
+    color:#3c2635;
+
+    font-family:"Comic Neue",cursive;
+
+    font-size:16px;
+
+    text-align:center;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    box-shadow:
+        0 0 0 2px #ed77af;
+
+}
+
+input::placeholder{
+    color:#c59aae;
+}
+
+
+/* BARRA INFERIOR */
+
+.status{
+
+    margin-top:28px;
+
+    padding:6px 8px;
+
+    background:#f5c1da;
+
+    border:1px solid #d36a9d;
+
+    font-size:9px;
+
+    text-align:left;
+
+    color:#6d3855;
+}
+
+.blink{
+    animation:blink 1.2s steps(2,start) infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.25;
+    }
+}
+
+
+/* FINAL */
+
+.final-note{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:7px 13px;
+
+    background:#222;
+
+    color:#fff;
+
+    font-size:10px;
+
+    transform:rotate(-1deg);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:390px){
+
+    .screen{
+        padding:22px 13px 20px;
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    .question{
+        font-size:30px;
+    }
+
+    .text{
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">★</div>
+<div class="sparkle s4">✦</div>
+
+
+<div class="page-wrap">
+
+    <div class="window">
+
+
+        <!-- BARRA DE WINDOWS -->
+
+        <div class="titlebar">
+
+            <span>
+                fer's  websiteeee.
+            </span>
+
+            <div class="buttons">
+
+                <span class="win">_</span>
+                <span class="win">□</span>
+                <span class="win">×</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="screen">
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="header">
+
+                <div class="site-name">
+                    WELCOME TO FER'S WEBSITE
+                </div>
+
+                <div class="subtitle">
+                    ★ online since 2026 ★
+                </div>
+
+            </div>
+
+
+            <div class="content">
+
+
+                <!-- PÁGINA 1 -->
+
+                <section id="page1" class="page active">
+
+
+                    <div class="deco">
+                        ✦　✧　✦
+                    </div>
+
+
+                    <h1>
+
+                        Holaaa,
+                        <br>
+
+                        soy
+                        <span class="pink">
+                            Fer
+                        </span>
+
+                    </h1>
+
+
+                    <div class="tag">
+                        ★ IMPORTANT MESSAGE ★
+                    </div>
+
+
+                    <p class="text">
+
+                        Espero que estés bien.
+
+                        <br><br>
+
+                        Me hubiera gustado preguntarte
+                        en persona, pero me iba a dar muchisima pena.😭 Y tambien perdoname si te incomodo, creeme que es lo que menos quiero.
+
+                    </p>
+
+
+                    <p class="text">
+
+                        Pero como me iba a dar mucha pena preguntarte entonces se me ocurrió
+                        darte esto.
+
+                        <br>
+
+                    
+
+                    </p>
+
+
+                    <button
+                        class="old-button"
+                        id="next"
+                    >
+
+                        SIGUIENTE »»
+
+                    </button>
+
+
+                    <div class="status">
+
+                        ● fer is online...
+                        <span class="blink">
+                            _
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- PÁGINA 2 -->
+
+                <section
+                    id="page2"
+                    class="page"
+                >
+
+
+                    <div class="deco">
+                        ✦　★　✦
+                    </div>
+
+                  
+                    <div class="question">
+
+                        ¿Me pasas tu
+                        <span class="pink">
+                            IG
+                        </span>?
+
+                    </div>
+
+
+                    <p class="small">
+
+                        para ser amigos y así, bueeeeno, pero si tu quieress. 
+
+                    </p>
+
+
+                    <div class="choice-area">
+
+
+                        <button id="yes">
+
+                            SÍ
+
+                        </button>
+
+
+                        <button id="no">
+
+                            NO :p 
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div class="tag">
+
+                        choose wisely.
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- FORMULARIO -->
+
+                <section
+                    id="form"
+                    class="page"
+                >
+
+
+                    <div class="deco">
+                        ★　✦　★
+                    </div>
+
+
+                    <h1 class="form-title">
+
+                        
+                        <span class="pink">
+                          
+                        </span>
+
+                    </h1>
+
+
+                    <p class="text">
+
+                        Escribe tu user.
+
+                        <br>
+
+                        y prometo no juzgarlo JAJAJA.😭
+
+                    </p>
+
+
+                    <label for="instagram">
+
+                        ★ TU USUARIO DE INSTAGRAM ★
+
+                    </label>
+
+
+                    <input
+                        id="instagram"
+                        type="text"
+                        maxlength="40"
+                        autocomplete="off"
+                        placeholder="@usuario"
+                    >
+
+
+                    <button
+                        class="old-button"
+                        id="send"
+                    >
+
+                        ENVIAR »»
+
+                    </button>
+
+
+                    <div class="status">
+
+                        guestbook status:
+                        <span class="blink">
+                            waiting...
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- FINAL -->
+
+                <section
+                    id="final"
+                    class="page"
+                >
+
+
+                    <div class="deco">
+                        ✦　★　✦
+                    </div>
+
+
+                    <h1>
+
+                        Listo
+                        <span class="pink">
+                            
+                        </span>
+
+                    </h1>
+
+
+                    <p class="text">
+
+                        thank you so much 
+
+                        <br><br>
+
+                        chaooo 🫶🏻
+
+                    </p>
+
+
+                    <div class="final-note">
+
+                        thanks for visiting my page.
+
+                    </div>
+
+
+                    <div class="status">
+
+                        ● guestbook updated successfully.
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+const page1 =
+    document.getElementById("page1");
+
+const page2 =
+    document.getElementById("page2");
+
+const form =
+    document.getElementById("form");
+
+const final =
+    document.getElementById("final");
+
+
+/* SIGUIENTE */
+
+document
+    .getElementById("next")
+    .addEventListener("click", () => {
+
+        page1.classList.remove("active");
+
+        page2.classList.add("active");
+
+    });
+
+
+
+/* BOTÓN NO */
+
+const no =
+    document.getElementById("no");
+
+
+function moveNo(){
+
+    const area =
+        document.querySelector(".choice-area");
+
+
+    const maxX =
+        Math.max(
+            0,
+            area.clientWidth - no.offsetWidth
+        );
+
+
+    const maxY =
+        Math.max(
+            0,
+            area.clientHeight - no.offsetHeight
+        );
+
+
+    no.style.left =
+        Math.random() * maxX + "px";
+
+
+    no.style.top =
+        Math.random() * maxY + "px";
+
+}
+
+
+no.addEventListener(
+    "mouseenter",
+    moveNo
+);
+
+
+no.addEventListener(
+    "click",
+    moveNo
+);
+
+
+no.addEventListener(
+    "touchstart",
+    e => {
+
+        e.preventDefault();
+
+        moveNo();
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+
+/* BOTÓN SÍ */
+
+document
+    .getElementById("yes")
+    .addEventListener("click", () => {
+
+        page2.classList.remove("active");
+
+        form.classList.add("active");
+
+        document
+            .getElementById("instagram")
+            .focus();
+
+    });
+
+
+
+/* ENVIAR */
+
+const instagram =
+    document.getElementById("instagram");
+
+
+document
+    .getElementById("send")
+    .addEventListener("click", () => {
+
+
+        const usuario =
+            instagram.value.trim();
+
+
+        if(!usuario){
+
+            alert(
+                "Escribe tu usuario primero :)"
+            );
+
+            instagram.focus();
+
+            return;
+
+        }
+
+
+        /*
+        AQUÍ DESPUÉS CONECTAREMOS
+        EL FORMULARIO PARA QUE EL
+        USUARIO LLEGUE AUTOMÁTICAMENTE
+        A FER.
+        */
+
+
+        console.log(
+            "Instagram:",
+            usuario
+        );
+
+
+        form.classList.remove("active");
+
+        final.classList.add("active");
+
+    });
+
+
+
+/* ENTER */
+
+instagram.addEventListener(
+    "keydown",
+    e => {
+
+        if(e.key === "Enter"){
+
+            document
+                .getElementById("send")
+                .click();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
