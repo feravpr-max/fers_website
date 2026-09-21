@@ -1,4 +1,4 @@
-DOCTYPEhtml>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -518,6 +518,7 @@ input::placeholder{
     font-size:10px;
 
     transform:rotate(-1deg);
+
 }
 
 
@@ -566,7 +567,7 @@ input::placeholder{
         <div class="titlebar">
 
             <span>
-                fer's  websiteeee.
+                fer's websiteeee.
             </span>
 
             <div class="buttons">
@@ -636,19 +637,16 @@ input::placeholder{
                         <br><br>
 
                         Me hubiera gustado preguntarte
-                        en persona, pero me iba a dar muchisima pena.😭 Y tambien perdoname si te incomodo, creeme que es lo que menos quiero.
+                        en persona, pero me iba a dar muchisima pena.😭
+                        Y tambien perdoname si te incomodo, creeme que es lo que menos quiero.
 
                     </p>
 
 
                     <p class="text">
 
-                        Pero como me iba a dar mucha pena preguntarte entonces se me ocurrió
-                        darte esto.
-
-                        <br>
-
-                    
+                        Pero como me iba a dar mucha pena preguntarte
+                        entonces se me ocurrió darte esto.
 
                     </p>
 
@@ -702,7 +700,7 @@ input::placeholder{
 
                     <p class="small">
 
-                        para ser amigos y así, bueeeeno, pero si tu quieress. 
+                        para ser amigos y así, bueeeeno, pero si tu quieress.
 
                     </p>
 
@@ -719,7 +717,7 @@ input::placeholder{
 
                         <button id="no">
 
-                            NO :p 
+                            NO :p
 
                         </button>
 
@@ -753,10 +751,7 @@ input::placeholder{
 
                     <h1 class="form-title">
 
-                        
-                        <span class="pink">
-                          
-                        </span>
+                        <span class="pink"></span>
 
                     </h1>
 
@@ -828,16 +823,15 @@ input::placeholder{
                     <h1>
 
                         Listo
-                        <span class="pink">
-                            
-                        </span>
+
+                        <span class="pink"></span>
 
                     </h1>
 
 
                     <p class="text">
 
-                        thank you so much 
+                        thank you so much
 
                         <br><br>
 
@@ -985,7 +979,7 @@ document
 
 
 
-/* ENVIAR */
+/* ENVIAR A FORMSPREE */
 
 const instagram =
     document.getElementById("instagram");
@@ -993,8 +987,7 @@ const instagram =
 
 document
     .getElementById("send")
-    .addEventListener("click", () => {
-
+    .addEventListener("click", async () => {
 
         const usuario =
             instagram.value.trim();
@@ -1013,23 +1006,52 @@ document
         }
 
 
-        /*
-        AQUÍ DESPUÉS CONECTAREMOS
-        EL FORMULARIO PARA QUE EL
-        USUARIO LLEGUE AUTOMÁTICAMENTE
-        A FER.
-        */
+        const datos =
+            new FormData();
 
-
-        console.log(
-            "Instagram:",
+        datos.append(
+            "instagram",
             usuario
         );
 
 
-        form.classList.remove("active");
+        try{
 
-        final.classList.add("active");
+            const respuesta =
+                await fetch(
+                    "https://formspree.io/f/mwlpvbvq",
+                    {
+                        method:"POST",
+                        body:datos,
+                        headers:{
+                            "Accept":"application/json"
+                        }
+                    }
+                );
+
+
+            if(respuesta.ok){
+
+                form.classList.remove("active");
+
+                final.classList.add("active");
+
+            }else{
+
+                alert(
+                    "No se pudo enviar. Inténtalo otra vez :)"
+                );
+
+            }
+
+
+        }catch(error){
+
+            alert(
+                "No se pudo enviar. Revisa tu conexión :)"
+            );
+
+        }
 
     });
 
@@ -1052,11 +1074,7 @@ instagram.addEventListener(
     }
 );
 
-</script> 
-<form action="https://formspree.io/f/mwlpvbvq" method="POST">
-  <label for="mensaje">Escribe tu mensaje:</label>
-  <textarea id="mensaje" name="message" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
+</script>
+
 </body>
 </html>
